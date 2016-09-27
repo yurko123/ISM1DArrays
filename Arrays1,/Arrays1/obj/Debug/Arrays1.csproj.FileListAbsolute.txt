@@ -1,0 +1,6 @@
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays1\Arrays1\bin\Debug\Arrays1.exe.config
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays1\Arrays1\obj\Debug\Arrays1.csprojResolveAssemblyReference.cache
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays1\Arrays1\bin\Debug\Arrays1.exe
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays1\Arrays1\bin\Debug\Arrays1.pdb
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays1\Arrays1\obj\Debug\Arrays1.exe
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays1\Arrays1\obj\Debug\Arrays1.pdb
