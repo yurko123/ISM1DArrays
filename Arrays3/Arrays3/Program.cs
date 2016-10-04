@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Arrays3
 {
-    class Program
+    public class Program
     {
          static  double[] GetRandomArr(uint length,int minVaule,int maxVaule,int precision)
             { double[] arr=new double [length];

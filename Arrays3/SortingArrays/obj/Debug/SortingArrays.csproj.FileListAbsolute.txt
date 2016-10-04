@@ -1,0 +1,6 @@
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays3\SortingArrays\bin\Debug\SortingArrays.exe.config
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays3\SortingArrays\bin\Debug\SortingArrays.exe
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays3\SortingArrays\bin\Debug\SortingArrays.pdb
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays3\SortingArrays\obj\Debug\SortingArrays.exe
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays3\SortingArrays\obj\Debug\SortingArrays.pdb
+C:\Users\Юрій\Desktop\C#\ISM1DArrays\Arrays3\SortingArrays\obj\Debug\SortingArrays.csprojResolveAssemblyReference.cache
