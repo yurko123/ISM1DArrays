@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SortingArray
 {
@@ -87,26 +88,59 @@ namespace SortingArray
             }
             return arr;
         }
-        /*static double[] ShellsSort(double[] array)
+       /* static double[] QickSort(double[] array)
         {
             double[] arr = (double[])array.Clone();
 
-        }*/
+        }*/ 
+        static double[] ShellsSort(double[] array)
+        {
+            double[] arr = (double[])array.Clone();
+            double temp =0;
+            
+            for (int d = arr.Length / 2; d > 0; d /= 2)
+           
+                for (int i = d; i < arr.Length; i += 1)
+                {
+                    if(arr[i-d]>arr[i]) 
+                    {
+                        temp=arr[i-d];
+                        arr[i-d]=arr[i];
+                        arr[i]=temp;
+                    }
+
+                }
+
+         return arr;
+        }
 
         static void Main(string[] args)
         {
             
             ConsoleConfig("Сортування масиву");
-            Console.Write("Введіть довжину масиву");
+            Console.Write("Введіть довжину масиву ");
             uint n = uint.Parse(Console.ReadLine());
+            Stopwatch time = new Stopwatch();
+            time.Start();
             double[] arr = GetRandomArr(n, -20, 10, 1);
-            WriteArray(arr,"Згенерований");
+            time.Stop();
+            WriteArray(arr,"Згенерований за "+time.Elapsed +"\n");
+            time.Start();
             double[] arr1 = BulbSort(arr);
-            WriteArray(arr1,"Відсортований бульбашкою");
+            time.Stop();
+            WriteArray(arr1, "Відсортований бульбашкою за " + time.Elapsed + "\n");
+            time.Start();
             double[] arr2 = InputSort(arr);
-            WriteArray(arr2,"Відсортований вставкою");
+            time.Stop();
+            WriteArray(arr2, "Відсортований вставкою за " + time.Elapsed + "\n");
+            time.Start();
             double[] arr3 = Choise(arr);
-            WriteArray(arr3,"Відсортований вибором");
+            time.Stop();
+            WriteArray(arr3, "Відсортований вибором за " + time.Elapsed + "\n");
+             time.Start();
+            double[] arr4 = ShellsSort(arr);
+            time.Stop();
+            WriteArray(arr4, "Відсортований методом Шелла за " + time.Elapsed + "\n");
 
 
             Console.ReadKey();
