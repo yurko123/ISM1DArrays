@@ -88,11 +88,35 @@ namespace SortingArray
             }
             return arr;
         }
-       /* static double[] QickSort(double[] array)
+        static void QickSort(double[] arr,int begin,int end)
         {
-            double[] arr = (double[])array.Clone();
+            if (begin >= end) return;
+            double mediana = arr[begin],temp=0;
+            int i=begin+1,j=end-1;
+            while (i < j)
+            {
+                while (arr[i] <= mediana)
+                { i++; if (i == arr.Length-1) break; }
+               
+                while (arr[j] >= mediana)
+                { j--; if (j ==0) break; }
+                if (i < j)
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+            
+                temp = arr[begin];
+                arr[begin] = arr[j];
+                arr[j] = temp;
+            
+            
+            QickSort(arr,begin,j);
+            QickSort(arr,j+1,end);
 
-        }*/ 
+            }
         static double[] ShellsSort(double[] array)
         {
             double[] arr = (double[])array.Clone();
@@ -122,7 +146,7 @@ namespace SortingArray
             uint n = uint.Parse(Console.ReadLine());
             Stopwatch time = new Stopwatch();
             time.Start();
-            double[] arr = GetRandomArr(n, -20, 10, 1);
+            double[] arr = GetRandomArr(n, -20, 10, 0);
             time.Stop();
             WriteArray(arr,"Згенерований за "+time.Elapsed +"\n");
             time.Start();
@@ -141,6 +165,11 @@ namespace SortingArray
             double[] arr4 = ShellsSort(arr);
             time.Stop();
             WriteArray(arr4, "Відсортований методом Шелла за " + time.Elapsed + "\n");
+            time.Start();
+            double[] arr5 = (double[])arr.Clone();
+            QickSort(arr5, 0, arr5.Length);
+            time.Stop();
+            WriteArray(arr5, "Відсортований швидким сортуванням за " + time.Elapsed + "\n");
 
 
             Console.ReadKey();
