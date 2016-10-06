@@ -91,15 +91,16 @@ namespace SortingArray
         static void QickSort(double[] arr,int begin,int end)
         {
             if (begin >= end) return;
-            double mediana = arr[begin],temp=0;
+            double mediana = 0,temp=0;
             int i=begin+1,j=end-1;
             while (i < j)
             {
+
                 while (arr[i] <= mediana)
-                { i++; if (i == arr.Length-1) break; }
+                { i++; if (i > arr.Length-1) break; }
                
                 while (arr[j] >= mediana)
-                { j--; if (j ==0) break; }
+                { j--; if (j <1) break; }
                 if (i < j)
                 {
                     temp = arr[i];
@@ -122,7 +123,7 @@ namespace SortingArray
             double[] arr = (double[])array.Clone();
             double temp =0;
             
-            for (int d = arr.Length / 2; d > 0; d /= 2)
+            for (int d = (arr.Length / 2)-1; d > 0; d /= 2)
            
                 for (int i = d; i < arr.Length; i += 1)
                 {
@@ -149,28 +150,33 @@ namespace SortingArray
             double[] arr = GetRandomArr(n, -20, 10, 0);
             time.Stop();
             WriteArray(arr,"Згенерований за "+time.Elapsed +"\n");
-            time.Start();
+            
+            time.Restart();
             double[] arr1 = BulbSort(arr);
             time.Stop();
             WriteArray(arr1, "Відсортований бульбашкою за " + time.Elapsed + "\n");
-            time.Start();
+            time.Restart();
             double[] arr2 = InputSort(arr);
             time.Stop();
             WriteArray(arr2, "Відсортований вставкою за " + time.Elapsed + "\n");
-            time.Start();
+            time.Restart();
             double[] arr3 = Choise(arr);
             time.Stop();
             WriteArray(arr3, "Відсортований вибором за " + time.Elapsed + "\n");
-             time.Start();
+             time.Restart();
             double[] arr4 = ShellsSort(arr);
             time.Stop();
             WriteArray(arr4, "Відсортований методом Шелла за " + time.Elapsed + "\n");
-            time.Start();
+            time.Restart();
             double[] arr5 = (double[])arr.Clone();
             QickSort(arr5, 0, arr5.Length);
             time.Stop();
             WriteArray(arr5, "Відсортований швидким сортуванням за " + time.Elapsed + "\n");
-
+            time.Restart();
+            double[] arr6 = (double[])arr.Clone();
+            Array.Sort<double>(arr6);
+            time.Stop();
+            WriteArray(arr6, "Відсортований сортуванням .NET за " + time.Elapsed + "\n");
 
             Console.ReadKey();
 
